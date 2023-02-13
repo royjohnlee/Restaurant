@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+    <h2>Restaurant List</h2>
+    <table>
+        <thread>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Phone Number
+                </th>
+            </tr>
+        </thread>
+        <tbody>
+            <% restaurants.forEach(function(r){%>
+                <tr>
+                    <td>
+                        <%=r.name%>
+                    </td>
+                    <td>
+                        <%=r.description%>
+                    </td>
+                    <td>
+                        <%=r.address%>
+                    </td>
+                    <td>
+                        <%=r.phoneNumber%>
+                    </td>
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
+    <%- include('../partials/footer') %>
