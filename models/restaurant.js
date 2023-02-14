@@ -3,10 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const restaurantSchema = new Schema({
-    name: String,
-    description: String,
-    address: String,
-    phoneNumber: Number
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    address: { type: String, required: true },
+    phoneNumber: { type: Number },
+    ethnic: {
+        type: String,
+        enum: ['African', 'Asian', 'Australian', 'European', 'North American', 'South American']
+    }
 }, {
     timestamps: true
 });

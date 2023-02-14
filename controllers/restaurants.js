@@ -6,7 +6,7 @@ module.exports = {
 };
 function index(req, res) {
     Restaurant.find({}, function (error, restaurants) {
-        res.render('restaurants/index', { restaurants })
+        res.render('restaurants/index', { title: 'All Restaurants', restaurants })
     });
 
 }
@@ -15,13 +15,13 @@ function create(req, res) {
     const restaurant = new Restaurant(req.body);
     restaurant.save(function (error) {
         if (error) {
-            return res.redirect('/restaurants/new')
+            return res.redirect('/restaurants')
         }
         console.log(restaurant);
-        res.redirect('/restaurants/new')
+        res.redirect('/restaurants')
     })
 }
 
 function newRestaurant(req, res) {
-    res.render('restaurants/new');
+    res.render('restaurants/new', { title: 'Add Restaurants' });
 }
