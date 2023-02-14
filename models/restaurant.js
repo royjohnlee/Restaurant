@@ -10,7 +10,7 @@ const restaurantSchema = new Schema({
     ethnic: {
         type: String,
         enum: ['African', 'Asian', 'Australian', 'European', 'North American', 'South American']
-    }
+    },
 }, {
     timestamps: true
 });

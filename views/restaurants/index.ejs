@@ -1,20 +1,12 @@
 <%- include('../partials/header') %>
     <h2>Restaurant List</h2>
-    <table>
+    <table id="list">
         <thread>
             <tr>
                 <th>
-                    Name
+                    Restaurant Name
                 </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Address
-                </th>
-                <th>
-                    Phone Number
-                </th>
+
                 <th>
                     Ethnic
                 </th>
@@ -27,17 +19,9 @@
                         <%=r.name%>
                     </td>
                     <td>
-                        <%=r.description%>
-                    </td>
-                    <td>
-                        <%=r.address%>
-                    </td>
-                    <td>
-                        <%=r.phoneNumber%>
-                    </td>
-                    <td>
                         <%=r.ethnic%>
                     </td>
+                    <td><a href="restaurants/<%= r._id%>">INFO</a></td>
                 </tr>
                 <%})%>
         </tbody>

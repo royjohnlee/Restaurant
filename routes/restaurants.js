@@ -8,6 +8,8 @@ router.get('/', restaurantCtrl.index)
 // GET /restaurants/new
 router.get('/new', restaurantCtrl.new)
 
+router.get('/:id', restaurantCtrl.show)
+
 // POST /restaurants
 router.post('/', restaurantCtrl.create)
 
