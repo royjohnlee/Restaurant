@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const reviewsCtrl = require('../controllers/reviews')
+const restaurant = require('../models/restaurant')
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 
-// POST /restaurant/:id/reviews
-router.post('restaurants/:id/reviews', reviewsCtrl.create)
+router.post('/restaurants/:id/reviews', ensureLoggedIn, reviewsCtrl.create)
+
+router.delete('/reviews/:id', ensureLoggedIn, reviewsCtrl.delete)
 
 
 module.exports = router;

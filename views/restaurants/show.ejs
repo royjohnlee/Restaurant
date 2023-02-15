@@ -1,44 +1,93 @@
 <%- include('../partials/header') %>
-    <section id="show-page">
 
-        <div>Restaurant Name: </div>
-        <div>
-            <%= restaurant.name %>
-        </div>
-        <div>Description: </div>
-        <div>
-            <%= restaurant.description%>
-        </div>
-        <div>Address</div>
-        <Address>
-            <%= restaurant.address %>
-        </Address>
-        <div>Phone Number</div>
-        <address>
-            <%=restaurant.phoneNumber%>
-        </address>
-        <div>Ethnic</div>
-        <div>
-            <%=restaurant.ethnic%>
-        </div>
+  <section id="show-page">
+    <div>Restaurant Name: </div>
+    <div>
+      <%= restaurant.name %>
+    </div>
+    <div>Description: </div>
+    <div>
+      <%= restaurant.description%>
+    </div>
+    <div>Address</div>
+    <Address>
+      <%= restaurant.address %>
+    </Address>
+    <div>Phone Number</div>
+    <address>
+      <%=restaurant.phoneNumber%>
+    </address>
+    <div>Ethnic</div>
+    <div>
+      <%=restaurant.ethnic%>
+    </div>
+  </section>
 
-    </section>
-    <!-- new markup below -->
-    <br><br>
-    <h2>Reviews</h2>
-    <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
-        <label>Review:</label>
-        <textarea name="content"></textarea>
-        <label>Rating:</label>
-        <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5" selected>5</option>
-        </select>
-        <input type="submit" value="Add Review">
-    </form>
+  <br><br>
+  <h2>Reviews</h2>
 
-    </section>
-    <%- include('../partials/footer') %>
+  <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Review">
+  </form>
+
+  <% if (restaurant.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total=0 %>
+          <% restaurant.reviews.forEach(function(r) { %>
+            <% total +=r.rating %>
+              <tr>
+                <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer">
+                  <%= r.userName %>
+                </td>
+                <td>
+                  <%= r.createdAt.toLocaleDateString() %>
+                </td>
+                <td>
+                  <%= r.content %>
+                </td>
+                <td>
+                  <%= r.rating %>
+                </td>
+                <td>
+
+                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+
+                </td>
+              </tr>
+              <% }); %>
+                <tr>
+                  <td colspan="2"></td>
+                  <td>
+                    <strong>
+                      <%= (total / restaurant.reviews.length).toFixed(1) %>
+                    </strong>
+                  </td>
+                </tr>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h5>No reviews</h5>
+      <% } %>
+        <%- include('../partials/footer') %>

@@ -3,13 +3,10 @@
     <table id="list">
         <thread>
             <tr>
-                <th>
-                    Restaurant Name
-                </th>
-
-                <th>
-                    Ethnic
-                </th>
+                <th> Restaurant Name </th>
+                <th> Ethnic </th>
+                <th></th>
+                <th>Created at</th>
             </tr>
         </thread>
         <tbody>
@@ -22,9 +19,9 @@
                         <%=r.ethnic%>
                     </td>
                     <td><a href="restaurants/<%= r._id%>">INFO</a></td>
-                    <!-- <td>
-                        <%=r.createdAt%>
-                    </td> -->
+                    <td>
+                        <%=r.createdAt.toLocaleDateString()%>
+                    </td>
                 </tr>
                 <%})%>
         </tbody>
