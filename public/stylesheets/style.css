@@ -68,7 +68,7 @@ nav>a.active {
 #new-form {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 8rem));
+  grid-template-columns: repeat(2, minmax(auto, 8 rem));
 }
 
 #new-form *,
@@ -126,19 +126,19 @@ table td {
   font-weight: bold;
 }
 
-/* #add-review-form,
+#add-review-form,
 #add-performer-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
   margin-bottom: 2rem;
-} */
+}
 
-/* #add-review-form input[type="submit"],
+*/ #add-review-form input[type="submit"],
 #add-performer-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
-} */
+}
 
 hr {
   color: #424748
@@ -147,7 +147,7 @@ hr {
 #badge-container {
   display: flex;
   flex-wrap: wrap;
-  /* padding: 1rem; */
+  padding: 1rem;
   width: 80%;
   border: 2px solid #B8C0C2;
   border-radius: .5rem;
