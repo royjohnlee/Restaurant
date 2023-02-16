@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-
   <section id="show-page">
     <div>Restaurant Name: </div>
     <div>
@@ -22,10 +21,8 @@
       <%=restaurant.ethnic%>
     </div>
   </section>
-
   <br><br>
   <h2>Reviews</h2>
-
   <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
     <label>Review:</label>
     <textarea name="content"></textarea>
@@ -91,4 +88,5 @@
     <% } else { %>
       <h5>No reviews</h5>
       <% } %>
+
         <%- include('../partials/footer') %>

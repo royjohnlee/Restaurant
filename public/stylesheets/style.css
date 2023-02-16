@@ -1,13 +1,12 @@
 * {
     box-sizing: border-box;
     font-family: Helvetica;
-    color: #424748;
+    color: rgb(112, 131, 173);
 }
 
 body {
     margin: 0;
     height: 100vh;
-    width: 100%;
     display: grid;
     grid-template-rows: 50px 1fr;
     grid-template-areas:
@@ -15,23 +14,10 @@ body {
         "main"
 }
 
-.image-container {
-    position: relative;
-    width: 100%;
-    max-height: 420px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 body>nav {
+    color: white;
     grid-area: nav;
-    background-color: #71dbf5;
-    /* background-color: grey; */
-
+    background-color: #741a17;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -49,19 +35,13 @@ body>main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: #E8ECEB; */
-    background-color: rgb(255, 255, 255);
+    background-color: #583535;
     padding: 20px;
     overflow-y: scroll;
 }
 
 body>main h1:first-child {
     margin-bottom: 50px;
-}
-
-#num::-webkit-outer-spin-button,
-#num::-webkit-inner-spin-button {
-    -webkit-appearance: none;
 }
 
 nav>a {
@@ -84,12 +64,12 @@ nav>a.active {
 #new-form {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(2, minmax(auto, 8 rem));
+    justify-content: center;
+    grid-template-columns: repeat(2, minmax(auto, 18rem));
 }
 
 #new-form *,
-#add-review-form *,
-#add-performer-form * {
+#add-review-form * {
     font-size: 20px;
     padding: 5px;
     border-radius: 5px;
@@ -107,7 +87,6 @@ table {
 
 table thead th {
     padding: 5px;
-    font-size: 20px;
     border-bottom: 2px solid #424748;
 }
 
@@ -123,15 +102,14 @@ table td {
 
 #list a {
     border-radius: 4px;
-    /* background-color: #B8C0C2; */
+    background-color: #B8C0C2;
     padding: 4px;
     text-decoration: none;
     font-size: 14px;
 }
 
 #list a:hover {
-    /* background-color: white; */
-    background-color: grey;
+    background-color: white;
 }
 
 #show-page {
@@ -152,7 +130,7 @@ table td {
     margin-bottom: 2rem;
 }
 
-*/ #add-review-form input[type="submit"],
+#add-review-form input[type="submit"],
 #add-performer-form input[type="submit"] {
     width: 10rem;
     grid-column: 2 / 3;
@@ -165,7 +143,7 @@ hr {
 #badge-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem;
+    /* padding: 1rem; */
     width: 80%;
     border: 2px solid #B8C0C2;
     border-radius: .5rem;
@@ -200,4 +178,15 @@ li {
 
 .login img {
     height: 30px;
+}
+
+.review-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-user img {
+    border-radius: 50%;
+    height: 40px;
 }

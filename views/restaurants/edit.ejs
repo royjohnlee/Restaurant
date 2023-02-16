@@ -1,31 +1,31 @@
 <%- include('../partials/header') %>
-    <%=title%>
+    <h2>
+        <%=title%>
+    </h2>
+    <form id="new-form" action="/restaurants/<%= restaurant.id%>?_method=PUT" method="POST">
 
-        <form action="/restaurants/<%= restaurant.id%>?_method=PUT" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%=restaurant.name%>">
 
-            <label>Name:
-                <input type="text" name="name" value="<%=restaurant.name%>">
-            </label><br>
-            <label>Description:
-                <input type="text" name="description" value="<%=restaurant.description%>">
-            </label><br>
-            <label>Address:
-                <input type="text" name="address" value="<%=restaurant.adrress%>">
-            </label><br>
-            <label>Phone Number:
-                <input id="num" type="number" name="phoneNumber" value="<%=restaurant.phoneNumber%>">
-            </label><br>
-            <label>Ethnic</label>
-            <select name="ethnic" value="restaurant.ethnic">
-                <option value="African">African</option>
-                <option value="Asian">Asian</option>
-                <option value="Australian">Australian</option>
-                <option value="European">European</option>
-                <option value="North American">North American</option>
-                <option value="South American">South American</option>
-            </select>
-            </label><br>
-            <button type="submit">Finish</button>
-        </form>
+        <label>Description:</label>
+        <input type="text" name="description" value="<%=restaurant.description%>">
 
-        <%- include('../partials/footer') %>
+        <label>Address:</label>
+        <input type="text" name="address" value="<%=restaurant.adrress%>">
+
+        <label>Phone Number:</label>
+        <input id="num" type="number" name="phoneNumber" value="<%=restaurant.phoneNumber%>">
+
+        <label>Ethnic</label>
+        <select name="ethnic" value="restaurant.ethnic">
+            <option value="African">African</option>
+            <option value="Asian">Asian</option>
+            <option value="Australian">Australian</option>
+            <option value="European">European</option>
+            <option value="North American">North American</option>
+            <option value="South American">South American</option>
+        </select> <br>
+        <button type="submit">Finish</button>
+    </form>
+
+    <%- include('../partials/footer') %>
