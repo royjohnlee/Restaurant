@@ -11,4 +11,9 @@ router.get('/:id', restaurantCtrl.show)
 
 router.post('/', restaurantCtrl.create)
 
+router.get('/:id/edit', ensureLoggedIn, restaurantCtrl.edit)
+
+router.put('/:id', ensureLoggedIn, restaurantCtrl.update);
+
+
 module.exports = router;

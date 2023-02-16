@@ -7,6 +7,7 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
+
 // Load the "secrets" in the .env file
 require('dotenv').config();
 // Connect to the MongoDB database
@@ -54,6 +55,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/restaurants', restaurantsRouter);
 app.use('/restaurants', restaurantsRouter);
 app.use('/', reviewsRouter);
 

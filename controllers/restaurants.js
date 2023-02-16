@@ -1,10 +1,36 @@
+const restaurant = require('../models/restaurant');
 const Restaurant = require('../models/restaurant')
 module.exports = {
     index,
     show,
     new: newRestaurant,
-    create
+    create,
+    edit,
+    update
 };
+
+function update(req, res) {
+    Restaurant.findOneAndUpdate(
+        { _id: req.params.id, userRecommending: req.user._id },
+        // update object with updated properties
+        req.body,
+        // options object with new: true to make sure updated doc is returned
+        { new: true },
+        function (err, restaurant) {
+            if (err || !restaurant) return res.redirect('/restaurants');
+            res.redirect(`/restaurants/${restaurant._id}`);
+        }
+    );
+}
+
+function edit(req, res) {
+    console.log(req.body)
+    Restaurant.findById(req.params.id, function (error, restaurant) {
+        res.render('restaurants/edit', {
+            title: "Edit Restaurant", restaurant
+        });
+    });
+}
 
 function index(req, res) {
     Restaurant.find({}, function (error, restaurants) {
@@ -14,6 +40,7 @@ function index(req, res) {
 
 function show(req, res) {
     Restaurant.findById(req.params.id, function (error, restaurant) {
+
         res.render('restaurants/show', { title: "Information", restaurant })
     })
 }

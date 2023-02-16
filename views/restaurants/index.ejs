@@ -7,6 +7,7 @@
                 <th> Ethnic </th>
                 <th></th>
                 <th>Created at</th>
+                <th></th>
             </tr>
         </thread>
         <tbody>
@@ -22,6 +23,9 @@
                     <td>
                         <%=r.createdAt.toLocaleDateString()%>
                     </td>
+
+                    <td><a href="restaurants/<%= r._id%>/edit">EDIT</a></td>
+
                 </tr>
                 <%})%>
         </tbody>
