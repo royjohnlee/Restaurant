@@ -28,16 +28,16 @@ An App to add restaurants for people to see and review. Primary designed for tho
 
 
 ##  Screenshots 📷
-| **Landing Page** |
+ *Landing Page*
 ------------
 
 <img src="public/images/front-landingpage.JPG" width="400">
 
-| **All Restaurant**|
+*All Restaurant*
 ------------
 <img src="public/images/allRest-simple.JPG" width="400">
 
-| **ADD Restaurant**|
+ *ADD Restaurant*
 ------------
 <img src="public/images/addRest-simple.JPG" width="400">
 
