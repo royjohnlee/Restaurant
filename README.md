@@ -6,7 +6,7 @@
 
 # Roy John Lee
 **Created by [Roy John Lee](https://www.linkedin.com/in/roy-john-lee/)**
-### [CLICK TO PLAY](https://royjohnlee.github.io/Minesweeper/)
+
 
 
 </div>
