@@ -24,7 +24,7 @@
 
 ## App Title: Recomatoes 🍅
 
-An App to add restaurants for people to see and review. Primary designed for those that are in need of a place to eat and see if what others think of the place (reviews)
+An App to add restaurants for people to see and review. Primary designed for those that are in need of a place to eat and see if what others think of the place (reviews). Great place for those that want to share their favorite place to eat and for those that are in need of a new place!
 
 
 ##  Screenshots 📷
