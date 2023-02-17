@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Recomato' });
+  res.render('index', { title: 'Recomatoes' });
 });
 
 // Google OAuth login route
